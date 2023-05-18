@@ -21,7 +21,8 @@ loaded_dtree = pickle.load(open('/home/phong/project/machine-learning/training_p
 loaded_gbdt = pickle.load(open('/home/phong/project/machine-learning/training_phase/gbdt.sav', 'rb'))
 loaded_scaler = pickle.load(open('/home/phong/project/machine-learning/training_phase/scaler.sav', 'rb'))
 loaded_voting = pickle.load(open('/home/phong/project/machine-learning/training_phase/voting.sav', 'rb'))
-weather_cond = ['Clear', 'Cloud', 'Sunny', 'Rainy']
+#weather_cond = ['Clear', 'Cloud', 'Sunny', 'Rainy']
+weather_cond = ['Trong lành', 'Có mây', 'Trời nắng', 'Trời mưa']
 # End of model and stuff
 
 
@@ -68,9 +69,10 @@ def predict(weather_data: WeatherData):
     # logreg_arr = loaded_logreg.predict(X)
     # nb_arr = loaded_nb.predict(X)
     #--------------------------------#
-    voting_arr = loaded_voting.predict(X)
-    counts = np.bincount(voting_arr)
-    most_common = np.argmax(counts)
+    #voting_arr = loaded_voting.predict(X)
+    voting_arr = np.squeeze(loaded_voting.predict(X))
+    # counts = np.bincount(voting_arr)
+    # most_common = np.argmax(counts)
     #------------------------------#
     # ensample process
     # if nn1_arr == 0:
@@ -146,13 +148,13 @@ def predict(weather_data: WeatherData):
     #     res = 3
 
 
-    return {'Condition': weather_cond[most_common]}
+    return {'Condition': weather_cond[voting_arr]}
 
 
 @app.get("/api/v2/{hours}")
 def predict_temp(hours: int):
-    #temps = requests_db.get_temp()
-    temps = requests_db.get_random_temp()
+    temps = requests_db.get_temp()
+    #temps = requests_db.get_random_temp()
     predict_temps = forecast_temp.forecast_temperature(temps)
 
     time_now_zone = datetime.datetime.now(pytz.timezone("Asia/Ho_Chi_Minh"))

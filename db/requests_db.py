@@ -9,13 +9,13 @@ def gen_dummy_temp(lower_bound=29, upper_bound=35, k=192):
 def get_random_temp():
     lower_bound = 29
     upper_bound = 35
-    k = 384
+    k = 195
     return np.random.randint(lower_bound, upper_bound+1, k)
     
 
 def get_temp():
     result = requests.get(
-        "https://api-weather-app.herokuapp.com/api/getRecords"
+        "http://localhost:8080/api/getRecords"
     )
     temp_list = [record["temperature"] for record in result.json()]
     return temp_list

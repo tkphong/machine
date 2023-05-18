@@ -7,6 +7,12 @@
             The weather today at %%Ho Chi Minh City%% is $$wt_cond$$. Remember to bring $$item$$ when you go outside.
         </template>
     </category>
+    <category>
+        <pattern>THỜI TIẾT HÔM NAY NHƯ THẾ NÀO</pattern>
+        <template>
+            thời tiết hôm nay tại %%Ho Chi Minh City%% là $$wt_cond$$. nhớ mang theo $$item$$ khi ra ngoài đường
+        </template>
+    </category>
     <!-- END -->
 
     <!-- Asking weather in another city-->
@@ -34,41 +40,48 @@
             The current !!<star/>!! is $$value$$
         </template>
     </category>
+    
+    <category>
+        <pattern>CURRENT *</pattern>
+        <template>
+            Current !!<star/>!! is $$value$$
+        </template>
+    </category>
     <!-- END -->
 
     <!-- Asking about advice to go outside -->
     <category>
         <pattern>IS IT GOOD TO GO OUTSIDE THIS *</pattern>
         <template>
-            The temperature will be $$temp$$ this @@<star/>@@, remember to use $$item$$.
+	    The weather today at %%<star/>%% is $$wt_cond$$. Remember to bring $$item$$ when you go outside.
         </template>
     </category>
 
     <category>
         <pattern>IS IT OKAY TO GO OUTSIDE THIS *</pattern>
         <template>
-            The temperature will be $$temp$$ this @@<star/>@@, remember to use $$item$$.
+	    The weather today at %%<star/>%% is $$wt_cond$$. Remember to bring $$item$$ when you go outside.
         </template>
     </category>
 
     <category>
         <pattern>IS IT FINE TO GO OUTSIDE THIS *</pattern>
         <template>
-            The temperature will be $$temp$$ this @@<star/>@@, remember to use $$item$$.
+	    The weather today at %%<star/>%% is $$wt_cond$$. Remember to bring $$item$$ when you go outside.
         </template>
     </category>
 
     <category>
         <pattern>SHOULD I GO OUTSIDE NOW</pattern>
         <template>
-            The temperature is $$temp$$, remember to use $$item$$.
+	    The weather today at %%<star/>%% is $$wt_cond$$. Remember to bring $$item$$ when you go outside.
         </template>
     </category>
 
     <category>
         <pattern>SHOULD I GO OUTSIDE AT *</pattern>
         <template>
-            The temperature will be $$temp$$ at @@<star/>@@, remember to use $$item$$.
+	    The weather today at %%<star/>%% is $$wt_cond$$. Remember to bring $$item$$ when you go outside.
         </template>
     </category>
     <!-- END -->
