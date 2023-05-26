@@ -31,8 +31,10 @@ class WeatherData(BaseModel):
     wind_speed: float
     pressure: int
     humidity: int
+    rain: float
     vis_km: int
     cloud: int
+
 
 
 class ChatbotInput(BaseModel):
@@ -58,7 +60,7 @@ def read_root():
 @app.post("/api/v1/")
 def predict(weather_data: WeatherData):
     X = np.array([[weather_data.temperature, weather_data.wind_speed, weather_data.pressure,
-                 weather_data.humidity, weather_data.vis_km, weather_data.cloud]])
+                 weather_data.humidity, weather_data.rain, weather_data.vis_km, weather_data.cloud]])
     X = loaded_scaler.transform(X)
     # tmp_arr = [0, 0, 0, 0]
     # nn1_arr = loaded_nn1.predict(X)
