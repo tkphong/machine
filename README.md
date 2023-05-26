@@ -1,2 +1,2 @@
-# WeatherRecommend_MDP_ML
-WeatherRecommend MDP Machine Learning component
+# WEATHER FORECAST 
+Weather Forecast Machine Learning component
