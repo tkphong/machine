@@ -2,10 +2,9 @@ import aiml
 import os
 import re
 
-
 kernel = aiml.Kernel()
-bot_brain_file = "chatbot/bot_brain/bot_brain.brn"
-startup_file = "chatbot/bot_files/std-startup.xml"
+bot_brain_file = "./chatbot/bot_brain/bot_brain.brn"
+startup_file = "./chatbot/bot_files/std-startup.xml"
 
 if os.path.isfile(bot_brain_file):
     kernel.bootstrap(brainFile=bot_brain_file)

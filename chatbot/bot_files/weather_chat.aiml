@@ -7,12 +7,6 @@
             The weather today at %%Ho Chi Minh City%% is $$wt_cond$$. Remember to bring $$item$$ when you go outside.
         </template>
     </category>
-    <category>
-        <pattern>THỜI TIẾT HÔM NAY NHƯ THẾ NÀO</pattern>
-        <template>
-            thời tiết hôm nay tại %%Ho Chi Minh City%% là $$wt_cond$$. nhớ mang theo $$item$$ khi ra ngoài đường
-        </template>
-    </category>
     <!-- END -->
 
     <!-- Asking weather in another city-->
